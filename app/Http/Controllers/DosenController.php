@@ -12,7 +12,7 @@ public function index(){
 }
 
 public function biodata(){
-    $nama = "Faizal Johan" ;
+    $nama = "Aiman Rediansyah Abd. Azis" ;
     $pelajaran = ["Algoritma & Pemrograman", "Kalkulus", "Pemrograman Web"];
     return view('biodata', ['nama' => $nama, 'matkul' => $pelajaran]);
 }
