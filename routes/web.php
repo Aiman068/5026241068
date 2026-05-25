@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
+use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\PegawaiController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -61,3 +63,15 @@ Route::get('pert3tugas', function () {
 Route::get('bio', function () {
 	return view('biodata');
 });
+
+Route::get('/pegawainama/{nama}', [PegawaiController::class, 'index']);
+Route::get('/formulir', [PegawaiController::class, 'formulir']);
+Route::post('/formulir/proses', [PegawaiController::class, 'proses']);
+//crud tabel pegawai
+Route::get('/pegawai', [PegawaiDBController::class, 'index']);
+Route::get('/pegawaitambah',[PegawaiDBController::class, 'tambah']);
+Route::post('/pegawaistore',[PegawaiDBController::class, 'store']);
+Route::get('/pegawaiedit/{id}',[PegawaiDBController::class, 'edit']);
+Route::post('/pegawaiupdate',[PegawaiDBController::class, 'update']);
+Route::get('/pegawaihapus/{id}',[PegawaiDBController::class, 'hapus']);
+Route::get('/pegawaicari', [PegawaiDBController::class, 'cari']);
