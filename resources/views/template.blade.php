@@ -53,7 +53,8 @@
                     <li><a href="/pegawai">Pegawai</a></li>
                     <li><a href="">PR 1</a></li>
                     <li><a href="">PR 2</a></li>
-                    <li><a href="">Pertemuan 15</a></li>
+                    <li><a href="/keranjangbelanja">Pertemuan 15</a></li>
+
                     <li><a href="">EAS</a></li>
 
                 </ul>
@@ -91,3 +92,4 @@
 </body>
 
 </html>
+
