@@ -5,7 +5,9 @@ use App\Http\Controllers\DosenController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\keranjangController;
-
+use App\Http\Controllers\BukuController;
+use App\Http\Controllers\NilaiKuliahController;
+use App\Http\Controllers\SiswaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -82,3 +84,26 @@ Route::get('/keranjangbelanja', [keranjangController::class, 'index_keranjang'])
 Route::get('/keranjangbeli/{id}', [keranjangController::class, 'beli']);
 Route::post('/keranjangstore', [keranjangController::class, 'storeKeranjang']);
 Route::get('/keranjangbatal/{id}', [keranjangController::class, 'batal']);
+
+
+//buku tugas pra eas
+Route::get('/buku', [BukuController::class, 'index'])->name('buku.index');
+Route::get('/buku/create', [BukuController::class, 'create'])->name('buku.create');
+Route::post('/buku', [BukuController::class, 'store'])->name('buku.store');
+Route::get('/buku/{id}/edit', [BukuController::class, 'edit'])->name('buku.edit');
+Route::put('/buku/{id}', [BukuController::class, 'update'])->name('buku.update');
+Route::delete('/buku/{id}', [BukuController::class, 'destroy'])->name('buku.destroy');
+
+//soal perempuan latihan eas
+Route::get('/nilaikuliah', [NilaiKuliahController::class, 'index']);
+Route::get('/nilaikuliahtambah',[NilaiKuliahController::class, 'tambah']);
+Route::post('/nilaikuliahstore',[NilaiKuliahController::class, 'store']);
+
+
+//route CRUD siswa
+Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
+Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');
+Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
+Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
+Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
+Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
