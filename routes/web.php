@@ -8,6 +8,8 @@ use App\Http\Controllers\keranjangController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\NilaiKuliahController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\mypegawaiController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -107,3 +109,10 @@ Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
 Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
 Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
 Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
+
+//route mypegawai
+
+Route::get('/eas', [mypegawaiController::class, 'mypegawai']);
+Route::get('/mypegawaitambah',[mypegawaiController::class, 'tambahmypegawai']);
+Route::post('/mypegawaistore',[mypegawaiController::class, 'storemypegawai']);
+Route::get('/mypegawaiview/{id}',[mypegawaiController::class, 'viewmypegawai']);
